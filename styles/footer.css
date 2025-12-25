@@ -1,0 +1,123 @@
+/* ===== FOOTER ===== */
+.footer {
+  background: #0b3a6e;
+  color: #ffffff;
+  padding: 30px 50px 15px;
+  font-size: 16px; /* fixed font size */
+  box-sizing: border-box;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 20px;    /* spacing between rows */
+  column-gap: 20px; /* spacing between columns */
+  margin-bottom: 0;
+}
+
+.footer-section {
+  flex: 1 1 150px;  /* flexible width */
+  min-width: 150px;
+}
+
+.footer h4 {
+  margin-bottom: 10px;
+  font-size: 16px; /* fixed heading size */
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  margin-bottom: 6px;
+  font-size: 16px; /* keep list items consistent */
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 16px; /* fixed link size */
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #ffd700; /* hover highlight */
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0b3a6e;
+  font-weight: bold;
+  text-align: center;
+  line-height: 36px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 16px; /* consistent icon font */
+}
+
+.social-icons a:hover {
+  background: #f0f0f0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px 15px;
+  }
+
+  .social-icons a {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+  }
+
+  .footer h4,
+  .footer ul li,
+  .footer a,
+  .footer-bottom {
+    font-size: 14px; /* smaller for very small screens */
+  }
+}

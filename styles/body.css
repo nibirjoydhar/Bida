@@ -1,0 +1,129 @@
+body {
+  min-width: 300px;
+  max-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.body-section {
+  display: flex;
+  flex-wrap: nowrap; /* prevent wrapping until smaller screens */
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 160px 180px;
+  background-color: #becdf7;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.body-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 1 1 50%; /* take half width */
+  max-width: 600px;
+  min-width: 200px;
+  height: 400px; 
+  gap: 8px;
+  border-left: 2px solid #0b3a6e;
+  border-bottom: 2px solid #0b3a6e;
+  padding: 0 5px;
+}
+
+.bar {
+  width: 60px;
+  background-color: #27be2e;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.5s;
+}
+
+.body-right {
+  flex: 1 1 50%;
+  max-width: 600px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.body-right img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===================== Responsive ===================== */
+
+/* Keep side by side until 780px */
+@media (max-width: 1080px) {
+  .body-left, .body-right {
+    flex: 1 1 48%;
+  }
+  .body-left {
+    height: 250px;
+  }
+  .body-right img{
+    height: 450px;
+  }
+}
+
+@media (max-width: 780px) {
+  .body-section {
+    flex-wrap: wrap; /* allow wrapping only below 780px */
+    gap: 30px;
+  }
+  .body-left, .body-right {
+    flex: 1 1 100%; /* stack vertically */
+    max-width: 100%;
+  }
+  .body-left {
+    height: 220px;
+  }
+  .body-right img{
+    height: 420px;
+  }
+  .bar {
+    width: 50px;
+    font-size: 0.75rem;
+  }
+  
+
+}
+
+@media (max-width: 600px) {
+  .body-left {
+    height: 180px;
+  }
+  .body-right img{
+    height: 340px;
+  }
+  .bar {
+    width: 40px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .body-section {
+    padding: 30px 20px;
+    gap: 20px;
+  }
+  .body-left {
+    height: 150px;
+  }
+  .body-right img{
+    height: 300px;
+  }
+  .bar {
+    width: 35px;
+    font-size: 0.65rem;
+  }
+}

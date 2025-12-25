@@ -1,0 +1,197 @@
+/* ===== HEADER ===== */
+.header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(11, 58, 110, 0.95);
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 20;
+  border-radius: 20px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* ===== NAV ===== */
+.nav {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.nav a,
+.dropdown > span {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.nav a:hover,
+.dropdown > span:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown > span::after {
+  content: " ▼";
+  font-size: 0.7em;
+  margin-left: 5px;
+}
+
+/* ===== DROPDOWN MENU (LEVEL 1) ===== */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* dropdown below parent by default */
+  left: 0;
+  margin-left: 0;
+  min-width: 200px;
+  background: #0f4c81;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+}
+
+.dropdown-menu.open,
+.dropdown:hover > .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background: #1e88e5;
+}
+
+/* ===== NESTED DROPDOWN ===== */
+.nested-dropdown {
+  position: relative;
+}
+
+.nested-dropdown > span::after {
+  content: " ▶";
+  float: right;
+  font-size: 0.7em;
+}
+
+.nested-dropdown > .dropdown-menu {
+  top: 0;
+  left: 100%; /* nested dropdown to the right */
+  margin-left: 6px;
+  background: #1368aa;
+}
+
+.nested-dropdown:hover > .dropdown-menu {
+  display: flex;
+}
+
+/* ===== SEARCH ===== */
+.search button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.search button:hover {
+  color: #ffd700;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== MOBILE / HAMBURGER ===== */
+@media (max-width: 1039px) {
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(11, 58, 110, 0.98);
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  /* When nav is collapsed (opened by hamburger), dropdown opens to right */
+  .nav.nav-collapsed .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 6px;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+/* ===== VERY SMALL DEVICES ===== */
+@media (max-width: 293px) {
+  .logo img {
+    height: 36px;
+  }
+  .hamburger {
+    font-size: 22px;
+  }
+  .search button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 246px) {
+  .logo img {
+    height: 28px;
+  }
+  .hamburger {
+    font-size: 18px;
+  }
+  .search button {
+    font-size: 14px;
+  }
+}
